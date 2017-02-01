@@ -1,7 +1,7 @@
 # base53
 
 base53 is a bootstrap template for laravel.
-Its based on [inspinia-responsive-admin-theme](https://wrapbootstrap.com/theme/inspinia-responsive-admin-theme)
+Its based on [inspinia-responsive-admin-theme](https://wrapbootstrap.com/theme/inspinia-responsive-admin-theme-WB0R5L90S)
 
 Purchase the theme if you want to use.
 

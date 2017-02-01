@@ -28,7 +28,7 @@
                     Admin
                 </div>
             </li>
-            <li class="{{ isActiveRoute('users') }}">
+            <li class="">
                 <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li class="{{ isActiveRoute('users.index') }}"><a href="{{ url('/admin/users') }}">Users</a></li>

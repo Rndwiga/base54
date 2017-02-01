@@ -29,7 +29,7 @@
                     Admin
                 </div>
             </li>
-            <li class="<?php echo e(isActiveRoute('users')); ?>">
+            <li class="">
                 <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li class="<?php echo e(isActiveRoute('users.index')); ?>"><a href="<?php echo e(url('/admin/users')); ?>">Users</a></li>
