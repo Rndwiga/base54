@@ -6,7 +6,7 @@
  * Time: 6:51 PM
  */
 
-namespace App\Multi_Tenant;
+namespace App\Multi_Tenant\Context;
 use Illuminate\Database\Eloquent\Model;
 
 

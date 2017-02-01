@@ -17,8 +17,11 @@ Route::get('/', 'HomeController@index')->name("main");
 //Route::get('/minor', 'HomeController@minor')->name("minor");
 //Route::get('/portal', 'HomeController@index');
 
+Route::group(['middleware' => 'multiTenant'], function () {
+    Route::get('user/activation/{token}', 'Auth\LoginController@activateUser')->name('user.activate');
+    Route::resource('admin/users', 'Admin\UsersController');
+    Route::patch('/admin/users/changePassword/{user}', 'Admin\UsersController@changePassword');
+    Route::get('/home', 'HomeController@index');
+});
 
-Route::get('user/activation/{token}', 'Auth\LoginController@activateUser')->name('user.activate');
-Route::resource('admin/users', 'Admin\UsersController');
-Route::patch('/admin/users/changePassword/{user}', 'Admin\UsersController@changePassword');
-Route::get('/home', 'HomeController@index');
+

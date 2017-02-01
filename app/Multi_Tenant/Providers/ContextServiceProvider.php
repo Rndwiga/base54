@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Multi_Tenant\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Multi_Tenant\ClientContext;

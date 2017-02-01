@@ -169,7 +169,7 @@ return [
          */
 
         Collective\Html\HtmlServiceProvider::class,
-        App\Providers\ContextServiceProvider::class,
+        App\Multi_Tenant\Providers\ContextServiceProvider::class,
 
         /*
          * Application Service Providers...
