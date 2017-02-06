@@ -12,8 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Platform',
-    'company' => 'Tyondo Enterprise',
+    'name' => 'Laravel',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'localhost'),
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -121,7 +120,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'daily'),
+    'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
@@ -167,8 +166,9 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Spatie\Permission\PermissionServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        //
 
         /*
          * Application Service Providers...
@@ -226,7 +226,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        //packages
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 

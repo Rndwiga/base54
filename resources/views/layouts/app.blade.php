@@ -6,7 +6,7 @@
     <title>{{config('app.name')}} </title>
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
-
+@yield('css')
 </head>
 <body class="gray-bg"`>
 <!--Content-->

@@ -9,6 +9,7 @@
 
             </div>
             <h3>Login</h3>
+            @include('partials.flash')
             <form class="m-t" role="form" method="POST" action="{{ url('/login') }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

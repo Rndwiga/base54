@@ -44,6 +44,9 @@ class userAccountActivationNotification extends Notification
      */
     public function toMail($notifiable)
     {
+      //  echo 'never got here mail';
+      //  exit;
+
       $link = route('user.activate', $this->token);
     //  $message = sprintf('Activate account %s', $link, $link);
 

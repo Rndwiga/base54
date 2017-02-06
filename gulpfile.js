@@ -12,7 +12,7 @@ const elixir = require('laravel-elixir');
  */
 
 elixir(mix => {
-    mix.sass('app.scss');
+     mix.sass('app.scss');
     mix.copy('resources/assets/vendor/bootstrap/fonts', 'public/fonts');
     mix.copy('resources/assets/vendor/font-awesome/fonts', 'public/fonts')
     mix.styles([
@@ -30,6 +30,8 @@ elixir(mix => {
         'resources/assets/vendor/metisMenu/jquery.metisMenu.js',
         'resources/assets/vendor/slimscroll/jquery.slimscroll.min.js',
         'resources/assets/vendor/pace/pace.min.js',
+        'resources/assets/vendor/js/plugins/datapicker/bootstrap-datepicker.js',
+        'resources/assets/vendor/js/plugins/jasny/jasny-bootstrap.min.js',
         'resources/assets/vendor/js/plugins/dataTables/datatables.min.js',
         'resources/assets/vendor/js/plugins/dataTables/dataTables.responsive.min.js',
         'resources/assets/vendor/js/plugins/dataTables/dataTables.rowReorder.min.js',

@@ -34,6 +34,7 @@ class UserActivationLibrary
           }
         $userToken = $this->createActivation($user);
         //$userToken = User::find($user->id);
+
         $user->notify(new userAccountActivationNotification($userToken));
     }
     /**

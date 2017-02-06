@@ -13,12 +13,15 @@
 
 
 Auth::routes();
-Route::get('/', 'HomeController@index')->name("main");
+Route::get('/', function () {
+    return view('welcome');
+});
 //Route::get('/minor', 'HomeController@minor')->name("minor");
 //Route::get('/portal', 'HomeController@index');
 
 
 Route::get('user/activation/{token}', 'Auth\LoginController@activateUser')->name('user.activate');
 Route::resource('admin/users', 'Admin\UsersController');
+Route::resource('admin/profile', 'Admin\UserProfileController');
 Route::patch('/admin/users/changePassword/{user}', 'Admin\UsersController@changePassword');
 Route::get('/home', 'HomeController@index');
