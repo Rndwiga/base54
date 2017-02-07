@@ -12,7 +12,7 @@
 
             <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    {{--<img src="{{asset('images/img.jpg')}}" alt="">--}}{{ Auth::user()->display_name }}
+                    {{--<img src="{{asset('images/img.jpg')}}" alt="">--}}{{ Auth::user()->first_name . ' ' . Auth::user()->last_name }}
                     <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu animated fadeInRight pull-right">

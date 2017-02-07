@@ -7,8 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Helpers\UserActivationLibrary;
 use App\Notifications\newUserLogin;
+use Illuminate\Support\Facades\Auth;
 use App\User;
-use Illuminate\Support\Facades\App;
 
 class LoginController extends Controller
 {
@@ -52,6 +52,7 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
+
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -62,8 +63,10 @@ class LoginController extends Controller
 
             return $this->sendLockoutResponse($request);
         }
+
         $email = $request->input('email');
         $password = $request->input('password');
+
         $this->verify($email,$password);
 
         if ($this->attemptLogin($request)) {
@@ -80,6 +83,7 @@ class LoginController extends Controller
 
     public function verify($email, $password)
     {
+
         $user = User::where('email', strtolower($email))->first();
 
         if (strtotime($user->updated_at) > strtotime("01/03/2017"))
@@ -104,8 +108,11 @@ class LoginController extends Controller
     public function authenticated(Request $request, $user)
     {
         if (!$user->activated) {
+
             $this->userActivationLibrary->sendActivationMail($user);
-            auth()->logout();
+
+            Auth::logout();
+            
             return back()->with('activationWarning', true);
         }
         $this->newLogin($request->ip(), $user);

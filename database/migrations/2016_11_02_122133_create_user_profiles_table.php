@@ -18,7 +18,6 @@ class CreateUserProfilesTable extends Migration
             $table->string('dob')->nullable();
             $table->string('identification_number', 40)->nullable();
             $table->string('profile_picture')->nullable();
-            $table->string('profile_picture')->nullable();
             $table->string('facebook', 50)->nullable();
             $table->string('twitter', 50)->nullable();
             $table->string('gplus', 50)->nullable();

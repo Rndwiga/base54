@@ -15,6 +15,7 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
-    'activationWarning' => 'Sorry, you need to validate your account first. Check your mail'
+    'activationWarning' => 'Sorry, you need to validate your account first. Check your mail',
+    'activationStatus' => 'Registration success! Kindly check your email for activation link'
 
 ];

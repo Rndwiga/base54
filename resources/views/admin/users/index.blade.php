@@ -47,22 +47,22 @@
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
                             <tr>
-                                <th>Name</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
                                 <th>email</th>
-                                <th>Role</th>
                                 <th>Activation</th>
                                 <th>Status</th>
                                 <th>Created</th>
-                                <th width="auto">Action</th>
+                                <th width="17%">Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @if(isset($users))
                                 @foreach($users as $user)
                                     <tr>
-                                        <td>{{$user->display_name}}</td>
+                                        <td>{{$user->first_name}}</td>
+                                        <td>{{$user->last_name}}</td>
                                         <td>{{$user->email}}</td>
-                                        <td>{{$user->role->name}}</td>
                                         <td>{{$user->activated == 1 ? 'Active' : 'Deactivated'}}</td>
                                         <td>{{$user->is_active == 1 ? 'Enabled' : 'Disabled'}}</td>
                                         <td>{{$user->created_at->diffForhumans()}}</td>
