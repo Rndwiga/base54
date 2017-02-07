@@ -44,10 +44,11 @@
                 </ul>
             </li>
             <li class="{{ isActiveRoute('users') }}">
-                <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Access Control List</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li class="{{ isActiveRoute('users.index') }}"><a href="{{ url('/admin/profile') }}">Profiles</a></li>
-                    <li class="{{ isActiveRoute('users.create') }}"><a href="{{ url('/admin/profile/create') }}">Add User</a></li>
+                    <li class="{{ isActiveRoute('users.index') }}"><a href="{{ url('/admin/roles') }}">Roles</a></li>
+                    <li class="{{ isActiveRoute('users.create') }}"><a href="{{ url('/admin/permissions/create') }}">Create Permission</a></li>
+                    <li class="{{ isActiveRoute('users.create') }}"><a href="{{ url('/admin/roles/create') }}">Create Role</a></li>
                 </ul>
             </li>
         </ul>

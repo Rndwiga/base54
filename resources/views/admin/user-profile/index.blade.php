@@ -47,38 +47,34 @@
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>email</th>
-                                <th>Role</th>
-                                <th>Activation</th>
-                                <th>Status</th>
+                                <th>#</th>
+                                <th>Role Name</th>
+                                <th>Description</th>
                                 <th>Created</th>
-                                <th width="auto">Action</th>
+                                <th>Updated</th>
+                                <th width="17%">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @if(isset($users))
-                                @foreach($users as $user)
+                            @if(isset($roles))
+                                @foreach($roles as $role)
                                     <tr>
-                                        <td>{{$user->display_name}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{$user->role->name}}</td>
-                                        <td>{{$user->activated == 1 ? 'Active' : 'Deactivated'}}</td>
-                                        <td>{{$user->is_active == 1 ? 'Enabled' : 'Disabled'}}</td>
-                                        <td>{{$user->created_at->diffForhumans()}}</td>
-
-
+                                        <td>{{$role->id}}</td>
+                                        <td>{{$role->name}}</td>
+                                        <td>{{$role->description}}</td>
+                                        <td>{{$role->created_at->diffForhumans()}}</td>
+                                        <td>{{$role->updated_at->diffForhumans()}}</td>
                                         <td>
                                             <div class="col-md-12 col-sm-12 col-xs-12">
                                                 <div class='pull-left'>
-                                                    <a href="{{url('admin/users/'. $user->id .'/edit')}}" class="btn btn-success" ><i class="fa fa-pencil"></i></a>
+                                                    <a href="{{url('admin/users/'. $role->id .'/edit')}}" class="btn btn-success" ><i class="fa fa-pencil"></i></a>
                                                     <a href="#" class="btn btn-danger" ><i class="fa fa-trash"></i></a>
                                                     &nbsp;
                                                 </div>
                                                 {{--<div class='pull-right'>--}}
                                                 <div class=''>
                                                     {!! Form::open(['url' => 'password/email', 'method' => 'post']) !!}
-                                                    <input type="hidden" class="form-control" name="email" value="{{$user->email}}">
+                                                    <input type="hidden" class="form-control" name="email" value="{{$role->email}}">
                                                     <button type="submit" class="btn bg-warning"><i class="fa fa-refresh"></i></button>
                                                     {!! Form::close() !!}
                                                 </div>

@@ -24,7 +24,8 @@ return [
         |
         */
 
-        'permission' => Spatie\Permission\Models\Permission::class,
+        //'permission' => Spatie\Permission\Models\Permission::class,
+        'permission' => App\Permission::class,
 
         /*
         |--------------------------------------------------------------------------

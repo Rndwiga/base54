@@ -28,25 +28,41 @@
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Primary bike</h5>
+                        <h5>New Role</h5>
                         <div class="ibox-tools">
                         </div>
                     </div>
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-md-12">
-                                {!! Form::open(['action' => 'Admin\UsersController@store', 'method' => 'post', 'class'=> 'form-horizontal form-label-left' , 'files' => true ]) !!}
+                                {!! Form::open(['action' => 'Admin\ACL\AuthenticateController@createRole', 'method' => 'post', 'class'=> 'form-horizontal form-label-left']) !!}
                                 <div class="form-group">
-                                        {{ Form::text('bike_one_make', null, ['required'=> 'required','placeholder' => 'Primary bike make e.g kawaski', 'class' => 'form-control col-md-7 col-xs-12']) }}
+                                        {{ Form::text('name', null, ['required'=> 'required','placeholder' => 'New role name', 'class' => 'form-control col-md-7 col-xs-12']) }}
                                 </div>
                                 <div class="form-group">
-                                        {{ Form::text('bike_one_plate', null, ['required'=> 'required','placeholder' => 'Primary bike plate', 'class' => 'form-control col-md-7 col-xs-12']) }}
+                                        {{ Form::text('description', null, ['required'=> 'required','placeholder' => 'Role Description', 'class' => 'form-control col-md-7 col-xs-12']) }}
                                 </div>
-                                <div class="form-group">
-                                        {{ Form::text('bike_one_description', null, ['required'=> 'required','placeholder' => 'primary bike description e.g color', 'class' => 'form-control col-md-7 col-xs-12']) }}
-                                </div>
-                                <div class="form-group">
+                                {{--<div class="form-group">
                                         {{ Form::select('role_id', ['' => 'What is the relationship?'] + $roles , null, ['class' => 'form-control col-md-7 col-xs-12']) }}
+                                </div>--}}
+                                <div class="ln_solid"></div>
+                                <div class="form-group">
+                                    <div class="col-md-6 col-sm-6 col-xs-6">
+                                        <a href="{{url('admin/users')}}" class="btn btn-block btn-primary">Cancel</a>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-xs-6">
+                                        <button type="submit" class="btn btn-block btn-success pull-right">Submit</button>
+                                    </div>
+                                </div>
+                                {!! Form::close() !!}
+                            </div>
+                            <div class="col-md-12">
+                                {!! Form::open(['action' => 'Admin\ACL\AuthenticateController@createRole', 'method' => 'post', 'class'=> 'form-horizontal form-label-left']) !!}
+                                <div class="form-group">
+                                        {{ Form::text('name', null, ['required'=> 'required','placeholder' => 'New Permission', 'class' => 'form-control col-md-7 col-xs-12']) }}
+                                </div>
+                                <div class="form-group">
+                                        {{ Form::select('role_id', ['' => 'Attach to Role'] + $rolesSelect , null, ['class' => 'form-control col-md-7 col-xs-12']) }}
                                 </div>
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
@@ -66,36 +82,21 @@
             <div class="col-lg-6">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Secondary bike</h5>
+                        <h5>Role List</h5>
                         <div class="ibox-tools">
                         </div>
                     </div>
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-md-12">
-                                {!! Form::open(['action' => 'Admin\UsersController@store', 'method' => 'post', 'class'=> 'form-horizontal form-label-left' , 'files' => true ]) !!}
-                                <div class="form-group">
-                                        {{ Form::text('bike_two_make', null, ['required'=> 'required','placeholder' => 'secondary bike make e.g kawaski', 'class' => 'form-control col-md-7 col-xs-12']) }}
-                                </div>
-                                <div class="form-group">
-                                        {{ Form::text('bike_two_plate', null, ['required'=> 'required','placeholder' => 'secondary bike plate', 'class' => 'form-control col-md-7 col-xs-12']) }}
-                                </div>
-                                <div class="form-group">
-                                        {{ Form::text('bike_two_description', null, ['required'=> 'required','placeholder' => 'secondary bike description', 'class' => 'form-control col-md-7 col-xs-12']) }}
-                                </div>
-                                <div class="form-group">
-                                        {{ Form::select('role_id', ['' => 'What is the relationship?'] + $roles , null, ['class' => 'form-control col-md-7 col-xs-12']) }}
-                                </div>
-                                <div class="ln_solid"></div>
-                                <div class="form-group">
-                                    <div class="col-md-6 col-sm-6 col-xs-6">
-                                        <a href="{{url('admin/users')}}" class="btn btn-block btn-primary">Cancel</a>
-                                    </div>
-                                    <div class="col-sm-6 col-md-6 col-xs-6">
-                                        <button type="submit" class="btn btn-block btn-success pull-right">Submit</button>
-                                    </div>
-                                </div>
-                                {!! Form::close() !!}
+                                <ul class="list-group">
+                                    @foreach($roles as $role)
+                                    <li class="list-group-item">
+                                       {{$role->name}}
+                                        {{--<span class="badge badge-primary">16</span>--}}
+                                    </li>
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
                     </div>

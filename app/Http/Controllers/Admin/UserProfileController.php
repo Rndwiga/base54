@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\PermissionGroup;
 use App\User;
-use App\Role;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -19,8 +20,8 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('admin.user-profile.index',compact('users'));
+        $roles = Role::all();
+        return view('admin.user-profile.index',compact('roles'));
     }
 
     /**
@@ -30,8 +31,11 @@ class UserProfileController extends Controller
      */
     public function create()
     {
-        $roles = Role::pluck('name', 'id')->all();
-        return view('admin.user-profile.create-bike', compact('roles'));
+        $roles = Role::all();
+        $permissionGroupSelect = PermissionGroup::pluck('name', 'id')->all();
+        $rolesSelect = Role::pluck('name', 'id')->all();
+
+        return view('admin.user-profile.create-permission-group',compact('roles', 'rolesSelect', 'permissionGroupSelect'));
     }
 
     /**
