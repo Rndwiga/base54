@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\PermissionGroup;
+use Modules\Permissions\Entities\PermissionGroup;
 use App\User;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Auth;

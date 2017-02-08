@@ -47,8 +47,8 @@
                 <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Access Control List</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li class="{{ isActiveRoute('users.index') }}"><a href="{{ url('/admin/roles') }}">Roles</a></li>
-                    <li class="{{ isActiveRoute('users.create') }}"><a href="{{ route('permissions.form') }}">Permission</a></li>
-                    <li class="{{ isActiveRoute('users.create') }}"><a href="{{ route('roles.form') }}">Create Role</a></li>
+                    <li class="{{ isActiveRoute('users.create') }}"><a href="{{ route('permissions.form') }}">Create Permission</a></li>
+                    <li class="{{ isActiveRoute('users.create') }}"><a href="{{ url('/admin/roles/create') }}">Create Role</a></li>
                 </ul>
             </li>
         </ul>

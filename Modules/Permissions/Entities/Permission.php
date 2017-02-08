@@ -1,8 +1,9 @@
 <?php
 
-namespace App;
+namespace Modules\Permissions\Entities;
 
 use Illuminate\Database\Eloquent\Model;
+
 use Spatie\Permission\Traits\RefreshesPermissionCache;
 use Spatie\Permission\Exceptions\PermissionDoesNotExist;
 use Spatie\Permission\Contracts\Permission as PermissionContract;
@@ -44,7 +45,7 @@ class Permission extends Model implements PermissionContract
     }
     public function group()
     {
-        return $this->belongsTo('App\PermissionGroup');
+        return $this->belongsTo('Modules\Permissions\Entities\PermissionGroup');
     }
 
     /**

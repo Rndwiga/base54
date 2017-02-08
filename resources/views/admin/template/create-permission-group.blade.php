@@ -35,7 +35,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-md-12">
-                                {!! Form::open(['action' => 'Admin\ACL\AuthenticateController@createPermissionGroup', 'method' => 'post', 'class'=> 'form-horizontal form-label-left']) !!}
+                                {!! Form::open(['route' => 'permissions.group.create', 'method' => 'post', 'class'=> 'form-horizontal form-label-left']) !!}
                                 <div class="form-group">
                                         {{ Form::text('name', null, ['required'=> 'required','placeholder' => 'New permission group name', 'class' => 'form-control col-md-7 col-xs-12']) }}
                                 </div>
@@ -71,7 +71,7 @@
                     <div class="ibox-content">
                         <div class="row">
                             <div class="col-md-12">
-                                {!! Form::open(['action' => 'Admin\ACL\AuthenticateController@createPermission', 'method' => 'post', 'class'=> 'form-horizontal form-label-left']) !!}
+                                {!! Form::open(['route' => 'permissions.create', 'method' => 'post', 'class'=> 'form-horizontal form-label-left']) !!}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
