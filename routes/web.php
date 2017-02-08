@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('admin/acl/group', 'Admin\ACL\AuthenticateController@createPermissionGroup');
     Route::post('admin/acl/permission', 'Admin\ACL\AuthenticateController@createPermission');
     Route::get('admin/permissions/create', 'Admin\ACL\AuthenticateController@displayGroupPermissionForm');
+
 });
 
 Route::group(['middleware' => ['role:admin,access_backend']], function () {
